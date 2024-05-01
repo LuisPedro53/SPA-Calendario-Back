@@ -5,10 +5,9 @@ const {
   GraphQLList,
   GraphQLNonNull,
   GraphQLBoolean,
-  GraphQLDate,
-  GraphQLTime,
   GraphQLInt,
 } = require("graphql");
+const { GraphQLDate, GraphQLTime } = require("graphql-iso-date");
 
 const {
   getTarefas,
