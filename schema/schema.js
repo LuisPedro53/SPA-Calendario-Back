@@ -12,7 +12,7 @@ const {
   createAluno,
   updateAluno,
   deleteAluno,
-} = require("../Models/aluno");
+} = require("../Models/tarefa");
 
 const AlunoType = new GraphQLObjectType({
   name: "Aluno",
