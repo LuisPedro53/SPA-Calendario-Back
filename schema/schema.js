@@ -5,38 +5,41 @@ const {
   GraphQLList,
   GraphQLNonNull,
   GraphQLBoolean,
+  GraphQLDate,
+  GraphQLTime,
+  GraphQLInt,
 } = require("graphql");
 
 const {
-  getAlunos,
-  createAluno,
-  updateAluno,
-  deleteAluno,
+  getTarefas,
+  createTarefa,
+  updateTarefa,
+  deleteTarefa,
 } = require("../Models/tarefa");
 
-const AlunoType = new GraphQLObjectType({
-  name: "Aluno",
+const TarefaType = new GraphQLObjectType({
+  name: "Tarefa",
   fields: () => ({
-    cdAluno: { type: GraphQLString },
-    nmAluno: { type: GraphQLString },
-    cpfAluno: { type: GraphQLString },
-    emailAluno: { type: GraphQLString },
+    cdTarefa: { type: GraphQLString },
+    nmTitulo: { type: GraphQLString },
+    nmDescricao: { type: GraphQLString },
+    dtTarefa: { type: GraphQLDate },
+    horaTarefa: { type: GraphQLTime },
+    tempoTarefa: { type: GraphQLInt },
   }),
 });
 
 const Query = new GraphQLObjectType({
   name: "Query",
   fields: {
-    alunos: {
-      type: new GraphQLList(AlunoType),
+    tarefas: {
+      type: new GraphQLList(TarefaType),
       args: {
-        cdAluno: { type: GraphQLString },
-        nmAluno: { type: GraphQLString },
-        cpfAluno: { type: GraphQLString },
-        emailAluno: { type: GraphQLString },
+        cdTarefa: { type: GraphQLString },
+        nmTitulo: { type: GraphQLString },
       },
       resolve(parent, args) {
-        return getAlunos(args);
+        return getTarefas(args);
       },
     },
   },
@@ -45,36 +48,40 @@ const Query = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
-    createAluno: {
-      type: AlunoType,
+    createTarefa: {
+      type: TarefaType,
       args: {
-        nmAluno: { type: new GraphQLNonNull(GraphQLString) },
-        cpfAluno: { type: new GraphQLNonNull(GraphQLString) },
-        emailAluno: { type: new GraphQLNonNull(GraphQLString) },
+        nmTitulo: { type: new GraphQLNonNull(GraphQLString) },
+        nmDescricao: { type: new GraphQLNonNull(GraphQLString) },
+        dtTarefa: { type: new GraphQLNonNull(GraphQLDate) },
+        horaTarefa: { type: new GraphQLNonNull(GraphQLTime) },
+        tempoTarefa: { type: new GraphQLNonNull(GraphQLInt) },
       },
       resolve(parent, args) {
-        return createAluno(args);
+        return createTarefa(args);
       },
     },
-    updateAluno: {
-      type: AlunoType,
+    updateTarefa: {
+      type: TarefaType,
       args: {
-        cdAluno: { type: new GraphQLNonNull(GraphQLString) },
-        nmAluno: { type: GraphQLString },
-        cpfAluno: { type: GraphQLString },
-        emailAluno: { type: GraphQLString },
+        cdTarefa: { type: new GraphQLNonNull(GraphQLString) },
+        nmTitulo: { type: GraphQLString },
+        nmDescricao: { type: GraphQLString },
+        dtTarefa: { type: GraphQLDate },
+        horaTarefa: { type: GraphQLTime },
+        tempoTarefa: { type: GraphQLInt },
       },
       resolve(parent, args) {
-        return updateAluno(args.cdAluno, args);
+        return updateTarefa(args.cdTarefa, args);
       },
     },
-    deleteAluno: {
+    deleteTarefa: {
       type: GraphQLBoolean,
       args: {
-        cdAluno: { type: new GraphQLNonNull(GraphQLString) },
+        cdTarefa: { type: new GraphQLNonNull(GraphQLString) },
       },
       resolve(parent, args) {
-        return deleteAluno(args.cdAluno);
+        return deleteTarefa(args.cdTarefa);
       },
     },
   },
