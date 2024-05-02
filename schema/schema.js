@@ -53,7 +53,7 @@ const Mutation = new GraphQLObjectType({
         nmTitulo: { type: new GraphQLNonNull(GraphQLString) },
         nmDescricao: { type: new GraphQLNonNull(GraphQLString) },
         dtTarefa: { type: new GraphQLNonNull(GraphQLDate) },
-        horaTarefa: { type: new GraphQLNonNull(GraphQLString) },
+        horaTarefa: { type: new GraphQLNonNull(GraphQLTime) },
         tempoTarefa: { type: new GraphQLNonNull(GraphQLInt) },
       },
       resolve(parent, args) {
@@ -67,7 +67,7 @@ const Mutation = new GraphQLObjectType({
         nmTitulo: { type: GraphQLString },
         nmDescricao: { type: GraphQLString },
         dtTarefa: { type: GraphQLDate },
-        horaTarefa: { type: GraphQLString },
+        horaTarefa: { type: GraphQLTime },
         tempoTarefa: { type: GraphQLInt },
       },
       resolve(parent, args) {
