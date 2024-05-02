@@ -23,7 +23,7 @@ const TarefaType = new GraphQLObjectType({
     nmTitulo: { type: GraphQLString },
     nmDescricao: { type: GraphQLString },
     dtTarefa: { type: GraphQLDate },
-    horaTarefa: { type: GraphQLTime },
+    horaTarefa: { type: GraphQLString },
     tempoTarefa: { type: GraphQLInt },
   }),
 });
@@ -53,7 +53,7 @@ const Mutation = new GraphQLObjectType({
         nmTitulo: { type: new GraphQLNonNull(GraphQLString) },
         nmDescricao: { type: new GraphQLNonNull(GraphQLString) },
         dtTarefa: { type: new GraphQLNonNull(GraphQLDate) },
-        horaTarefa: { type: new GraphQLNonNull(GraphQLTime) },
+        horaTarefa: { type: new GraphQLNonNull(GraphQLString) },
         tempoTarefa: { type: new GraphQLNonNull(GraphQLInt) },
       },
       resolve(parent, args) {
@@ -67,7 +67,7 @@ const Mutation = new GraphQLObjectType({
         nmTitulo: { type: GraphQLString },
         nmDescricao: { type: GraphQLString },
         dtTarefa: { type: GraphQLDate },
-        horaTarefa: { type: GraphQLTime },
+        horaTarefa: { type: GraphQLString },
         tempoTarefa: { type: GraphQLInt },
       },
       resolve(parent, args) {

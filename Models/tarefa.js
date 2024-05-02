@@ -1,6 +1,14 @@
 const { poolPromise } = require("../db.js");
 const sql = require("mssql");
 
+const consulta =
+  " cdTarefa, " +
+  " nmTitulo, " +
+  " nmDescricao, " +
+  " dtTarefa, " +
+  " CONVERT(varchar(5),horaTarefa)horaTarefa," +
+  " tempoTarefa ";
+
 async function getTarefas(filter) {
   try {
     const pool = await poolPromise;
@@ -33,7 +41,7 @@ async function getTarefas(filter) {
     END`;
     await pool.request().query(tableCheckQuery);
 
-    let query = "SELECT * FROM Tarefas WHERE 1=1";
+    let query = "SELECT " + consulta + " FROM Tarefas WHERE 1=1";
     const parameters = {};
 
     if (filter.nmTitulo) {
@@ -75,7 +83,9 @@ async function createTarefa(tarefa) {
 
     const queryResult = await pool
       .request()
-      .query("SELECT TOP 1 * FROM Tarefas ORDER BY cdTarefa DESC");
+      .query(
+        "SELECT TOP 1  " + consulta + "  FROM Tarefas ORDER BY cdTarefa DESC"
+      );
 
     return queryResult.recordset[0];
   } catch (err) {
@@ -102,7 +112,9 @@ async function updateTarefa(cdTarefa, tarefa) {
     const queryResult = await pool
       .request()
       .input("cdTarefa", sql.VarChar, cdTarefa)
-      .query("SELECT * FROM Tarefas WHERE cdTarefa = @cdTarefa");
+      .query(
+        "SELECT  " + consulta + " FROM Tarefas WHERE cdTarefa = @cdTarefa"
+      );
 
     return queryResult.recordset[0];
   } catch (err) {
