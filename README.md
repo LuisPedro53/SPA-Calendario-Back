@@ -1,7 +1,7 @@
 # Projeto MyTasks
 
 Bem-vindo!
-Este é o backend do Projeto EducaData, criado inteiramente por mim. Um CRUD onde é possível pesquisar, deletar, criar e atualizar estudantes.
+Este é o backend do Projeto MyTasks, criado inteiramente por mim. Um CRUD onde é possível pesquisar, deletar, criar e atualizar tasks.
 
 ## Tecnologias Usadas
 
