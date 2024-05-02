@@ -36,6 +36,8 @@ const Query = new GraphQLObjectType({
       args: {
         cdTarefa: { type: GraphQLString },
         nmTitulo: { type: GraphQLString },
+        dataInicial: { type: GraphQLDate },
+        dataFinal: { type: GraphQLDate },
       },
       resolve(parent, args) {
         return getTarefas(args);

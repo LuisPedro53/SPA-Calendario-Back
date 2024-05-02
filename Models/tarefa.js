@@ -49,6 +49,20 @@ async function getTarefas(filter) {
       parameters.nmTitulo = "%" + filter.nmTitulo + "%";
     }
 
+    if (filter.dataInicial) {
+      query += " AND dtTarefa >= convert(date, @dataInicial)";
+      parameters.dataInicial = new Date(filter.dataInicial)
+        .toISOString()
+        .split("T")[0];
+    }
+
+    if (filter.dataFinal) {
+      query += " AND dtTarefa <= convert(date, @dataFinal)";
+      parameters.dataFinal = new Date(filter.dataFinal)
+        .toISOString()
+        .split("T")[0];
+    }
+
     const request = pool.request();
     for (const [key, value] of Object.entries(parameters)) {
       request.input(key, sql.VarChar, value);
