@@ -1,9 +1,9 @@
-# Project EducaData
+# Projeto MyTasks
 
-Welcome !
-This is the backend of the EducaData Project, created entirely by me. A crud where it is possible to search, delete, create and update students.
+Bem-vindo!
+Este é o backend do Projeto EducaData, criado inteiramente por mim. Um CRUD onde é possível pesquisar, deletar, criar e atualizar estudantes.
 
-## Tecnologies Used
+## Tecnologias Usadas
 
 ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql)
 ![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
@@ -12,73 +12,67 @@ This is the backend of the EducaData Project, created entirely by me. A crud whe
 
 
 
-## A Little Bit of Each Technology
+## Um Pouco de Cada Tecnologia
 
-Creating a project using the following technologies was an incredibly enriching experience:
+Criar um projeto usando as seguintes tecnologias foi uma experiência incrivelmente enriquecedora:
 
-- **GraphQL**: GraphQL is a data query and manipulation language for APIs. It allows clients to define the structure of the data required, and the same structure of the data is returned from the server. This leads to less data being transferred over the network and a more efficient application.
+- **GraphQL**: GraphQL é uma linguagem de consulta e manipulação de dados para APIs. Ele permite que os clientes definam a estrutura dos dados necessários, e a mesma estrutura dos dados é retornada do servidor. Isso leva a menos dados sendo transferidos pela rede e uma aplicação mais eficiente.
 
-- **Express**: Express.js is a fast, unopinionated, and minimalist web framework for Node.js. It provides a robust set of features for web and mobile applications, making it a popular choice for building single-page, multi-page, and hybrid web applications.
+- **Express**: Express.js é um framework web rápido, não opinativo e minimalista para Node.js. Ele fornece um conjunto robusto de recursos para aplicações web e móveis, tornando-se uma escolha popular para a construção de aplicações web de página única, multi-página e híbridas.
 
-- **SQL Server**: Microsoft SQL Server is a relational database management system (RDBMS) that supports a wide variety of transaction processing, business intelligence, and analytics applications in corporate IT environments. It’s one of the three market-leading database technologies, along with Oracle Database and IBM’s DB2.
+- **SQL Server**: Microsoft SQL Server é um sistema de gerenciamento de banco de dados relacional (RDBMS) que suporta uma grande variedade de processamento de transações, inteligência de negócios e aplicações de análise em ambientes de TI corporativos. É uma das três tecnologias de banco de dados líderes de mercado, juntamente com o Oracle Database e o DB2 da IBM.
 
-
-## Developer
+## Desenvolvedor
 
 - Luiz Pedro Galdino Silva
 
-## Project Features
+## Recursos do Projeto
 
-1. Register
-2. Update
-3. Delete
-4. Search
-
-
-## How to run the project
-
-After cloning the repository, make sure Docker is installed on your system. If not, you can download and install it from the official Docker website.
-
-Once Docker is installed, follow these steps to run the project:
+1. Registro
+2. Atualização
+3. Deletar
+4. Pesquisar
 
 
-1. Bring down any old versions of the project that might be running with the following command:
+## Como executar o projeto
+
+Após clonar o repositório, certifique-se de que o Docker está instalado em seu sistema. Se não, você pode baixar e instalar a partir do site oficial do Docker.
+
+Uma vez que o Docker está instalado, siga estes passos para executar o projeto:
+
+1. Derrube quaisquer versões antigas do projeto que possam estar rodando com o seguinte comando:
 
 ```
 docker-compose down
 ```
-2. Build the Docker Compose project with the following command:
+2. Construa o projeto Docker Compose com o seguinte comando:
 
 ```
 docker-compose build
 ```
-3. Build the Docker Compose project with the following command:
+3. Construa o projeto Docker Compose com o seguinte comando:
 
 ```
 docker-compose up
-
 ```
-4. After executing the above commands, at the end of the image installation and subsequent execution, the terminal will display the following messages:
+4. Após executar os comandos acima, ao final da instalação da imagem e subsequente execução, o terminal exibirá as seguintes mensagens:
 
 ```
 Conectado ao banco de dados
-
 ```
 ```
 Server is running on port 8080
-
 ```
-4. Make sure the server (EducaData-Back) is running on port 8080.
+5. Certifique-se de que o servidor (EducaData-Back) está rodando na porta 8080.
 
-5. To check if the server is running, type in your browser: 
+6. Para verificar se o servidor está rodando, digite no seu navegador:  
 
 ```
 localhost:8080/graphql
 ```
 
-6. If the graphical part of graphql appears, then the server is running correctly
+7. Se a parte gráfica do graphql aparecer, então o servidor está rodando corretamente
 
+## Conclusão
 
-## Conclusion
-
-In summary, each of these technologies played a vital role in the project, contributing to its success. The combination of these tools resulted in clean, efficient, and secure code. It was a valuable learning journey that will surely have a positive impact on future projects.
+Em resumo, cada uma dessas tecnologias desempenhou um papel vital no projeto, contribuindo para o seu sucesso. A combinação dessas ferramentas resultou em um código limpo, eficiente e seguro. Foi uma jornada de aprendizado valiosa que certamente terá um impacto positivo em projetos futuros.
